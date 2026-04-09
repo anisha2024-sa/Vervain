@@ -7,3 +7,12 @@ function fix() {
     document.getElementById("output").innerText =
     "All vulnerabilities fixed successfully!";
 }
+function scan() {
+    document.getElementById("output").innerText =
+    "Found 2 vulnerabilities (1 high, 1 medium)";
+}
+
+function fix() {
+    document.getElementById("output").innerText =
+    "All vulnerabilities fixed successfully!";
+}
