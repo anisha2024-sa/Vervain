@@ -1,33 +1,20 @@
-const express = require("express");
-const { exec } = require("child_process");
-const cors = require("cors");
-
-const app = express();
-app.use(cors());
-
-// Check server
-app.get("/", (req, res) => {
-    res.send("Backend is running");
-});
-
-// Scan vulnerabilities
-app.get("/scan", (req, res) => {
-    exec("npm audit --json", (error, stdout, stderr) => {
-        res.send(stdout);
-    });
-});
-
-// Fix vulnerabilities
-app.get("/fix", (req, res) => {
-    exec("npm audit fix", (error, stdout, stderr) => {
-        if (error) {
-      return res.send("Error fixing vulnerabilities");
-    }
-
-    res.send("Vulnerabilities fixed successfully!");
-  });
-});
-
-app.listen(3000, () => {
-    console.log("Server running at http://localhost:3000");
-});
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.1",
+    "express": "^5.2.1",
+    "semver": "^7.7.4",
+    "socket.io": "^4.8.3"
+  }
+}
